@@ -1,0 +1,28 @@
+
+# EditorConfig is awesome: https://EditorConfig.org
+
+root = true
+
+# 全てのファイルの初期設定
+[*]
+indent_style             = space    # スペースタブ
+indent_size              = 4        # インデントの数
+end_of_line              = crlf     # 改行文字
+trim_trailing_whitespace = true     # 行末空白の削除
+insert_final_newline     = true     # 最終行に空白行を追加
+
+[*.html, *.css, *.scss, *.js, *.php]
+charset = utf-8                     # 文字コード
+
+[*.bat]
+indent_style = tab
+
+[*.wsf, *.vbs]
+indent_style = space
+indent_size  = 4
+
+[*.sql]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
