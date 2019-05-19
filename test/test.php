@@ -2,7 +2,7 @@
 // webhook parameter check
 $array_info = [
     'date'      => date('Y/m/d H:i:s'),
-    'payload'   => filter_input(INPUT_POST, 'payload'),
+    '$_REQUEST' => $_REQUEST,
     '$_SERVER'  => $_SERVER,
 ];
 
