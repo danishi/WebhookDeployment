@@ -1,0 +1,6 @@
+sercret_key = "hogehoge"
+
+[deploy_setting]
+;repository name = local repository path
+hogerepo = "/var/www/hogeapp/"
+fugarepo = "/var/www/fugaapp/"
