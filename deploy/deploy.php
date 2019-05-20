@@ -11,8 +11,9 @@ if(!isset($_SERVER['HTTP_X_HUB_SIGNATURE']) &&
     die();
 }
 
-$payload = $_REQUEST['payload'];
+$payload = json_decode($_POST['payload'], true);
 
+//payloadからpushされたリポジトリ名を取得し、iniファイルと突き合わせcloneコマンドを発行する
 foreach($arrayIniFile['deploy_setting'] as $repository_name => $local_repository_path){
 
     if($payload['repository']['name'] != $repository_name) continue;
