@@ -1,5 +1,5 @@
 <?php
-$log_file = __DIR__ . "/../depoy.log";
+$log_file = __DIR__ . "/../deploy.log";
 
 // INIファイル読み込み
 $arrayIniFile = parse_ini_file(__DIR__ . "/../deploy.ini", true);
