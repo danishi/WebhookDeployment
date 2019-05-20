@@ -21,7 +21,7 @@ foreach($arrayIniFile['deploy_setting'] as $repository_name => $local_repository
     $command = 'cd ' . $local_repository_path;
     exec($command, $output, $return_var);
     file_put_contents($log_file, date("Y-m-d H:i:s")."\t".$command."\t".$output.PHP_EOL, FILE_APPEND);
-    if(!$return_var) continue;
+    if($return_var != 0) continue;
 
     $command = 'git --git-dir=.git pull';
     exec($command, $output, $return_var);
