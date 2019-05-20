@@ -18,12 +18,7 @@ foreach($arrayIniFile['deploy_setting'] as $repository_name => $local_repository
 
     if($payload['repository']['name'] != $repository_name) continue;
 
-    $command = 'cd ' . $local_repository_path;
-    exec($command, $output, $return_var);
-    file_put_contents($log_file, date("Y-m-d H:i:s")."\t".$command."\t".var_export($output).PHP_EOL, FILE_APPEND);
-    if($return_var != 0) continue;
-
-    $command = 'git --git-dir=.git pull';
+    $command = "cd {$local_repository_path} && git --git-dir=.git pull 2>&1";
     exec($command, $output, $return_var);
     file_put_contents($log_file, date("Y-m-d H:i:s")."\t".$command."\t".var_export($output).PHP_EOL, FILE_APPEND);
 }
